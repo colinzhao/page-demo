@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的Gitee Pages测试页面</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        a {
+            color: #ffeb3b;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 恭喜！</h1>
+        <p>你的 Gitee Pages 已经成功部署！</p>
+        
+        <div class="highlight">
+            <p>这是一个测试页面，用于验证 Gitee Pages 服务是否正常工作。</p>
+        </div>
+        
+        <p>你可以将这个页面替换为你自己的内容。</p>
+        
+        <div class="highlight">
+            <p>当前时间：<span id="currentTime"></span></p>
+        </div>
+        
+        <p>
+            <a href="https://gitee.com" target="_blank">访问 Gitee</a> | 
+            <a href="https://help.gitee.com" target="_blank">查看帮助文档</a>
+        </p>
+    </div>
+
+    <script>
+        // 显示当前时间
+        function updateTime() {
+            document.getElementById('currentTime').textContent = new Date().toLocaleString('zh-CN');
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
