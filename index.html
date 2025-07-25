@@ -3,75 +3,366 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的Gitee Pages测试页面</title>
+    <title>给婉婉的祝福</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
-            padding: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(45deg, #ff6b6b, #ffa502);
             color: white;
             text-align: center;
+            padding: 30px 20px;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
+        
         h1 {
             font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .blessing {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+        
+        .music-section, .slideshow-section {
+            flex: 1;
+            min-width: 300px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            color: #ff6b6b;
+            text-align: center;
             margin-bottom: 20px;
+            font-size: 1.5em;
         }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
+        
+        /* 音乐播放器样式 */
+        .music-player {
+            text-align: center;
         }
-        .highlight {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
+        
+        .music-controls {
             margin: 20px 0;
         }
-        a {
-            color: #ffeb3b;
-            text-decoration: none;
+        
+        .music-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ffa502);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
         }
-        a:hover {
-            text-decoration: underline;
+        
+        .music-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .music-info {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        /* 图片轮播样式 */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .slide {
+            display: none;
+            text-align: center;
+        }
+        
+        .slide.active {
+            display: block;
+            animation: fadeEffect 1s;
+        }
+        
+        @keyframes fadeEffect {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+        
+        .slide-img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slide-caption {
+            margin-top: 10px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .slideshow-controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dot.active, .dot:hover {
+            background-color: #ff6b6b;
+        }
+        
+        .auto-play {
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .auto-play label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #343a40;
+            color: white;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .blessing {
+                font-size: 1.3em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎉 恭喜！</h1>
-        <p>你的 Gitee Pages 已经成功部署！</p>
+        <header>
+            <h1>🎵 温馨祝福页面 🎵</h1>
+            <div class="blessing">希望婉婉天天开心！😊</div>
+        </header>
         
-        <div class="highlight">
-            <p>这是一个测试页面，用于验证 Gitee Pages 服务是否正常工作。</p>
+        <div class="content">
+            <div class="music-section">
+                <h2 class="section-title">🎶 音乐播放器</h2>
+                <div class="music-player">
+                    <audio id="backgroundMusic" loop>
+                        <source src="" type="audio/mpeg">
+                        您的浏览器不支持音频播放。
+                    </audio>
+                    
+                    <div class="music-controls">
+                        <button class="music-btn" onclick="playMusic()">▶ 播放</button>
+                        <button class="music-btn" onclick="pauseMusic()">⏸ 暂停</button>
+                        <button class="music-btn" onclick="stopMusic()">⏹ 停止</button>
+                    </div>
+                    
+                    <div class="music-info">
+                        <p><strong>状态：</strong><span id="musicStatus">未播放</span></p>
+                        <p><strong>提示：</strong>请上传音乐文件到仓库的 music 文件夹</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slideshow-section">
+                <h2 class="section-title">🖼️ 美图欣赏</h2>
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="https://picsum.photos/400/300?random=1" alt="美丽风景1" class="slide-img">
+                        <div class="slide-caption">愿你如花般美丽绽放</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://picsum.photos/400/300?random=2" alt="美丽风景2" class="slide-img">
+                        <div class="slide-caption">愿你笑容如阳光般温暖</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://picsum.photos/400/300?random=3" alt="美丽风景3" class="slide-img">
+                        <div class="slide-caption">愿你每一天都充满快乐</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://picsum.photos/400/300?random=4" alt="美丽风景4" class="slide-img">
+                        <div class="slide-caption">愿你的生活如诗如画</div>
+                    </div>
+                </div>
+                
+                <div class="slideshow-controls">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+                
+                <div class="auto-play">
+                    <label>
+                        <input type="checkbox" id="autoPlayCheck" onchange="toggleAutoPlay()" checked>
+                        自动播放图片
+                    </label>
+                </div>
+            </div>
         </div>
         
-        <p>你可以将这个页面替换为你自己的内容。</p>
-        
-        <div class="highlight">
-            <p>当前时间：<span id="currentTime"></span></p>
-        </div>
-        
-        <p>
-            <a href="https://gitee.com" target="_blank">访问 Gitee</a> | 
-            <a href="https://help.gitee.com" target="_blank">查看帮助文档</a>
-        </p>
+        <footer>
+            <p>💝 专门为婉婉制作的祝福页面 💝</p>
+            <p>愿你每天都开心快乐，笑容常在！</p>
+        </footer>
     </div>
 
     <script>
-        // 显示当前时间
-        function updateTime() {
-            document.getElementById('currentTime').textContent = new Date().toLocaleString('zh-CN');
+        let slideIndex = 0;
+        let autoPlayInterval;
+        let isAutoPlay = true;
+        
+        // 图片轮播功能
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            
+            // 隐藏所有幻灯片
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+                dots[i].classList.remove("active");
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            
+            slides[slideIndex-1].classList.add("active");
+            dots[slideIndex-1].classList.add("active");
         }
-        updateTime();
-        setInterval(updateTime, 1000);
+        
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(showSlides, 3000);
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+        
+        function toggleAutoPlay() {
+            isAutoPlay = !isAutoPlay;
+            if (isAutoPlay) {
+                startAutoPlay();
+            } else {
+                stopAutoPlay();
+            }
+        }
+        
+        // 音乐播放功能
+        function playMusic() {
+            const audio = document.getElementById("backgroundMusic");
+            const status = document.getElementById("musicStatus");
+            
+            if (audio.src) {
+                audio.play()
+                    .then(() => {
+                        status.textContent = "正在播放";
+                    })
+                    .catch(error => {
+                        status.textContent = "播放失败，请检查音频文件";
+                        console.log("播放失败:", error);
+                    });
+            } else {
+                status.textContent = "请先上传音乐文件到 music 文件夹";
+            }
+        }
+        
+        function pauseMusic() {
+            const audio = document.getElementById("backgroundMusic");
+            const status = document.getElementById("musicStatus");
+            audio.pause();
+            status.textContent = "已暂停";
+        }
+        
+        function stopMusic() {
+            const audio = document.getElementById("backgroundMusic");
+            const status = document.getElementById("musicStatus");
+            audio.pause();
+            audio.currentTime = 0;
+            status.textContent = "已停止";
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 启动自动播放
+            startAutoPlay();
+            
+            // 设置音乐文件路径（实际使用时需要替换为真实的音乐文件）
+            const audio = document.getElementById("backgroundMusic");
+            // 这里可以设置默认音乐文件，或者让用户上传
+            // audio.src = "music/default.mp3";
+        });
+        
+        // 手动切换时重置自动播放
+        document.querySelector('.slideshow-container').addEventListener('click', function() {
+            if (isAutoPlay) {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+        });
     </script>
 </body>
 </html>
